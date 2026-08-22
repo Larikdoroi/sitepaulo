@@ -734,6 +734,247 @@ footer{ background: var(--text-main); color:#cbd5e1; padding:64px 0 28px; margin
 }
 </style>
 
+
+<style>
+/* Ajuste responsivo mobile — somente enquadramento/centralização, sem alterar a estrutura */
+@media (max-width: 600px){
+  html, body{ width:100%; max-width:100%; overflow-x:hidden; }
+  .container{ width:100%; max-width:100%; margin-left:auto; margin-right:auto; padding-left:18px; padding-right:18px; }
+  section, header, footer{ width:100%; max-width:100%; overflow-x:hidden; }
+  .hero .container{ width:100%; max-width:100%; grid-template-columns:minmax(0,1fr); }
+  .hero-copy, .hero-visual, .about, .about-copy, .footer-grid,
+  .problem-grid, .card-grid, .diff-grid, .benefit-grid, .results-grid, .testi-grid{
+    min-width:0; max-width:100%;
+  }
+  .hero-visual{ width:100%; max-width:100%; margin-left:auto; margin-right:auto; }
+  .visual-bg{ inset:0; width:100%; max-width:100%; border-radius:28px; }
+  .browser-window{ width:calc(100% - 28px); max-width:320px; left:50%; }
+  .fc-meta{ left:2%; }
+  .fc-google{ right:2%; }
+  .fc-target{ right:1%; }
+  .fc-chart{ left:1%; }
+  img, svg, video, canvas{ max-width:100%; }
+  .cta-final{ width:auto; max-width:calc(100% - 32px); margin-left:auto; margin-right:auto; }
+}
+@media (max-width: 380px){
+  .container{ padding-left:14px; padding-right:14px; }
+  .browser-window{ width:calc(100% - 18px); }
+  .fc-meta, .fc-google, .fc-target, .fc-chart{ transform:scale(.92); }
+}
+</style>
+
+
+<style>
+/* ============================================================
+   AJUSTE DOS CARDS FLUTUANTES DO HERO
+   Mantém a estrutura existente e traz Meta Ads, Precisão,
+   Crescimento e Google Ads para frente da composição.
+============================================================= */
+
+/* garante uma hierarquia visual clara */
+.hero-visual{
+  overflow:visible !important;
+}
+
+.visual-bg{
+  overflow:visible !important;
+}
+
+.browser-window{
+  z-index:3 !important;
+}
+
+.float-card{
+  z-index:8 !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  pointer-events:none;
+}
+
+/* Desktop / telas maiores */
+.fc-meta{
+  top:2% !important;
+  left:2% !important;
+}
+
+.fc-target{
+  top:20% !important;
+  right:1% !important;
+}
+
+.fc-chart{
+  bottom:18% !important;
+  left:1% !important;
+}
+
+.fc-google{
+  bottom:8% !important;
+  right:2% !important;
+}
+
+/* Tablet */
+@media (max-width:1000px){
+  .hero-visual{
+    overflow:visible !important;
+  }
+
+  .fc-meta{
+    top:2% !important;
+    left:2% !important;
+  }
+
+  .fc-target{
+    top:18% !important;
+    right:2% !important;
+  }
+
+  .fc-chart{
+    bottom:15% !important;
+    left:2% !important;
+  }
+
+  .fc-google{
+    bottom:6% !important;
+    right:2% !important;
+  }
+}
+
+/* Mobile — mantém os balões totalmente dentro da tela,
+   porém visíveis na frente do mockup */
+@media (max-width:560px){
+  .hero-visual{
+    overflow:visible !important;
+    padding:0 4px;
+  }
+
+  .visual-bg{
+    overflow:visible !important;
+  }
+
+  .browser-window{
+    z-index:3 !important;
+  }
+
+  .float-card{
+    z-index:10 !important;
+    max-width:none !important;
+    opacity:1 !important;
+    padding:7px 10px !important;
+    font-size:9px !important;
+    border-radius:12px !important;
+    box-shadow:0 10px 24px rgba(0,0,0,.14) !important;
+  }
+
+  .float-card span:not(.dot){
+    overflow:visible !important;
+    text-overflow:clip !important;
+    white-space:nowrap !important;
+  }
+
+  .fc-meta{
+    top:3% !important;
+    left:2% !important;
+  }
+
+  .fc-target{
+    top:22% !important;
+    right:2% !important;
+  }
+
+  .fc-chart{
+    bottom:18% !important;
+    left:2% !important;
+  }
+
+  .fc-google{
+    bottom:7% !important;
+    right:2% !important;
+  }
+}
+
+/* celulares bem pequenos */
+@media (max-width:380px){
+  .float-card{
+    font-size:8px !important;
+    padding:6px 8px !important;
+  }
+
+  .fc-target{
+    right:1% !important;
+  }
+
+  .fc-google{
+    right:1% !important;
+  }
+
+  .fc-meta,
+  .fc-chart{
+    left:1% !important;
+  }
+}
+</style>
+
+
+<style>
+/* Ajuste pontual: desloca apenas o balão Crescimento um pouco mais para a lateral esquerda */
+.fc-chart{
+  left:-1% !important;
+}
+
+@media (max-width:560px){
+  .fc-chart{
+    left:-1% !important;
+  }
+}
+
+@media (max-width:380px){
+  .fc-chart{
+    left:-1% !important;
+  }
+}
+</style>
+
+
+<style>
+/* Ajuste pontual final: Crescimento mais para a esquerda,
+   deixando o balão menos sobreposto ao painel */
+.fc-chart{
+  left:-7% !important;
+}
+
+@media (max-width:560px){
+  .fc-chart{
+    left:-5% !important;
+  }
+}
+
+@media (max-width:380px){
+  .fc-chart{
+    left:-4% !important;
+  }
+}
+</style>
+
+
+<style>
+/* Ajuste pontual: sobe somente o balão Meta Ads */
+.fc-meta{
+  top:-1% !important;
+}
+
+@media (max-width:560px){
+  .fc-meta{
+    top:0% !important;
+  }
+}
+
+@media (max-width:380px){
+  .fc-meta{
+    top:0% !important;
+  }
+}
+</style>
+
 </head>
 <body>
 
